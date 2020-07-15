@@ -10,7 +10,7 @@ var currentCities = JSON.parse(localStorage.getItem("cities")) || [];
     btn.addClass("cities");
     $("#btns").append(btn);
   }
-
+// }
 
 $("#search").on("click", (event) => getWeather(event));
 
