@@ -17,10 +17,10 @@ body{
 }
 
 #UV{
-    background-color: red;
-    width:15%;
+    width:75px;
     border-radius: 7px;
     padding: 10px;
+    text-align: center;
 }
 
 #future{

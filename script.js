@@ -93,6 +93,21 @@ function getWeather(event) {
     }).then(function (response) {
       console.log(response);
       $("#UV").text(response.value); 
+      var numUV = parseFloat(response.value);
+      console.log(numUV);
+      if(numUV < 3){
+        $("#UV").css("background-color", "lawngreen");
+      }
+      if(numUV>3 && numUV<5){
+        $("#UV").css("background-color", "yellow");
+      }
+      if(numUV>5 && numUV<8){
+        $("#UV").css("background-color", "red");
+      }
+      if(numUV>8){
+        $("#UV").css("background-color", "darkred");
+        $("#UV").css("color", "white");
+      }
     })
 
   });
@@ -151,7 +166,21 @@ function refresh(){
       method: "GET",
     }).then(function (response) {
       console.log(response);
-      $("#UV").text(response.value); 
+      $("#UV").text(response.value);
+      var numUV = parseFloat(response.value);
+      if(numUV < 3){
+        $("#UV").css("background-color", "lawngreen");
+      }
+      if(numUV>3 && numUV<5){
+        $("#UV").css("background-color", "yellow");
+      }
+      if(numUV>5 && numUV<8){
+        $("#UV").css("background-color", "red");
+      }
+      if(numUV>8){
+        $("#UV").css("background-color", "darkred");
+        $("#UV").css("color", "white");
+      }
     })
   });
 }
@@ -216,6 +245,20 @@ function btnClick(event){
     }).then(function (response) {
       console.log(response);
       $("#UV").text(response.value); 
+      var numUV = parseFloat(response.value);
+      if(numUV < 3){
+        $("#UV").css("background-color", "lawngreen");
+      }
+      if(numUV>3 && numUV<5){
+        $("#UV").css("background-color", "yellow");
+      }
+      if(numUV>5 && numUV<8){
+        $("#UV").css("background-color", "red");
+      }
+      if(numUV>8){
+        $("#UV").css("background-color", "darkred");
+        $("#UV").css("color", "white");
+      }
     })
   });
 }
