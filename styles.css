@@ -35,3 +35,7 @@ body{
     width: 125px;
     display: inline-block;
 }
+
+.green{
+    display: none;
+}

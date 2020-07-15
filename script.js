@@ -1,19 +1,23 @@
 var cityName = localStorage.getItem("city");
 refresh();
-var currentCities = [];
-// var currentCities = JSON.parse(localStorage.getItem("cities"));
-//   console.log(currentCities);
-//   for(var i = 0; i < currentCities.length; i++){
-//     var btn = $("<button>");
-//     btn.text(currentCities[i]);
-//     btn.addClass("cities");
-//     $("#btns").append(btn);
-//   }
+var currentCities = JSON.parse(localStorage.getItem("cities")) || [];
+  console.log(currentCities);
+// if(JSON.parse(localStorage.getItem("cities"))){
+//   currentCities = JSON.parse(localStorage.getItem("cities")); 
+  for(var i = 0; i < currentCities.length; i++){
+    var btn = $("<button>");
+    btn.text(currentCities[i]);
+    btn.addClass("cities");
+    $("#btns").append(btn);
+  }
+
+
 $("#search").on("click", (event) => getWeather(event));
 
-
 function getWeather(event) {
+  console.log("hi");
   event.preventDefault();
+  $(".green").removeClass("green");
   var cityName = $("#city").val();      
   var queryURL = `http://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=03db9957cc3df2d4c78bce1e3642f5ab` + `&units=imperial`
   $.ajax({
@@ -34,6 +38,7 @@ function getWeather(event) {
       button.text(response.city.name);
       button.addClass("cities");
       $("#btns").append(button);
+      currentCities = JSON.parse(localStorage.getItem("cities"));
       $(".cities").each(function(index){
         $(this).on("click", btnClick);
       })
@@ -89,11 +94,13 @@ function getWeather(event) {
       console.log(response);
       $("#UV").text(response.value); 
     })
+
   });
         
 }
 
 function refresh(){
+  $(".green").removeClass("green");
   var queryURL = `http://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=03db9957cc3df2d4c78bce1e3642f5ab` + `&units=imperial`
   $.ajax({
     url: queryURL,
@@ -156,6 +163,7 @@ $(".cities").each(function(index){
 })
 
 function btnClick(event){
+  $(".green").removeClass("green");
   var cityName = $(this).html();
   var queryURL = `http://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=03db9957cc3df2d4c78bce1e3642f5ab` + `&units=imperial`
   $.ajax({
