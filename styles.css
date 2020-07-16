@@ -25,6 +25,8 @@ body{
 
 #future{
     text-align: center;
+    text-decoration: underline;
+    padding: 20px;
 }
 
 .jumbotron{
@@ -38,4 +40,11 @@ body{
 
 .green{
     display: none;
+}
+
+#CWF{
+    text-align: center;
+    margin: auto;
+    padding: 20px;
+    text-decoration: underline;
 }
