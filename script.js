@@ -19,17 +19,17 @@ function getWeather(event) {
   event.preventDefault();
   $(".green").removeClass("green");
   var cityName = $("#city").val();      
-  var queryURL = `http://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=03db9957cc3df2d4c78bce1e3642f5ab` + `&units=imperial`
+  var queryURL = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=03db9957cc3df2d4c78bce1e3642f5ab` + `&units=imperial`
   $.ajax({
     url: queryURL,
     method: "GET",
   }).then(function (response) {
-    var iconurl=`http://openweathermap.org/img/wn/${response.list[0].weather[0].icon}@2x.png`
-    var iconurl1=`http://openweathermap.org/img/wn/${response.list[7].weather[0].icon}@2x.png`
-    var iconurl2=`http://openweathermap.org/img/wn/${response.list[15].weather[0].icon}@2x.png`
-    var iconurl3=`http://openweathermap.org/img/wn/${response.list[23].weather[0].icon}@2x.png`
-    var iconurl4=`http://openweathermap.org/img/wn/${response.list[31].weather[0].icon}@2x.png`
-    var iconurl5=`http://openweathermap.org/img/wn/${response.list[39].weather[0].icon}@2x.png`
+    var iconurl=`https://openweathermap.org/img/wn/${response.list[0].weather[0].icon}@2x.png`
+    var iconurl1=`https://openweathermap.org/img/wn/${response.list[7].weather[0].icon}@2x.png`
+    var iconurl2=`https://openweathermap.org/img/wn/${response.list[15].weather[0].icon}@2x.png`
+    var iconurl3=`https://openweathermap.org/img/wn/${response.list[23].weather[0].icon}@2x.png`
+    var iconurl4=`https://openweathermap.org/img/wn/${response.list[31].weather[0].icon}@2x.png`
+    var iconurl5=`https://openweathermap.org/img/wn/${response.list[39].weather[0].icon}@2x.png`
     console.log(response);
     if(currentCities === []){
       currentCities.push(response.city.name);
@@ -86,7 +86,7 @@ function getWeather(event) {
     var lon = response.city.coord.lon;
     console.log(lon);
     console.log(lat);
-    var query=`http://api.openweathermap.org/data/2.5/uvi?appid=03db9957cc3df2d4c78bce1e3642f5ab&lat=${lat}&lon=${lon}`
+    var query=`https://api.openweathermap.org/data/2.5/uvi?appid=03db9957cc3df2d4c78bce1e3642f5ab&lat=${lat}&lon=${lon}`
     $.ajax({
       url: query,
       method: "GET",
@@ -116,17 +116,17 @@ function getWeather(event) {
 
 function refresh(){
   $(".green").removeClass("green");
-  var queryURL = `http://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=03db9957cc3df2d4c78bce1e3642f5ab` + `&units=imperial`
+  var queryURL = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=03db9957cc3df2d4c78bce1e3642f5ab` + `&units=imperial`
   $.ajax({
     url: queryURL,
     method: "GET",
   }).then(function (response) {
-    var iconurl=`http://openweathermap.org/img/wn/${response.list[0].weather[0].icon}@2x.png`
-    var iconurl1=`http://openweathermap.org/img/wn/${response.list[7].weather[0].icon}@2x.png`
-    var iconurl2=`http://openweathermap.org/img/wn/${response.list[15].weather[0].icon}@2x.png`
-    var iconurl3=`http://openweathermap.org/img/wn/${response.list[23].weather[0].icon}@2x.png`
-    var iconurl4=`http://openweathermap.org/img/wn/${response.list[31].weather[0].icon}@2x.png`
-    var iconurl5=`http://openweathermap.org/img/wn/${response.list[39].weather[0].icon}@2x.png`
+    var iconurl=`https://openweathermap.org/img/wn/${response.list[0].weather[0].icon}@2x.png`
+    var iconurl1=`https://openweathermap.org/img/wn/${response.list[7].weather[0].icon}@2x.png`
+    var iconurl2=`https://openweathermap.org/img/wn/${response.list[15].weather[0].icon}@2x.png`
+    var iconurl3=`https://openweathermap.org/img/wn/${response.list[23].weather[0].icon}@2x.png`
+    var iconurl4=`https://openweathermap.org/img/wn/${response.list[31].weather[0].icon}@2x.png`
+    var iconurl5=`https://openweathermap.org/img/wn/${response.list[39].weather[0].icon}@2x.png`
     console.log(response);
     $("#cityName").text(response.city.name);
     $('#img').attr('src', iconurl);
@@ -160,7 +160,7 @@ function refresh(){
     var lon = response.city.coord.lon;
     console.log(lon);
     console.log(lat);
-    var query=`http://api.openweathermap.org/data/2.5/uvi?appid=03db9957cc3df2d4c78bce1e3642f5ab&lat=${lat}&lon=${lon}`
+    var query=`https://api.openweathermap.org/data/2.5/uvi?appid=03db9957cc3df2d4c78bce1e3642f5ab&lat=${lat}&lon=${lon}`
     $.ajax({
       url: query,
       method: "GET",
@@ -194,17 +194,17 @@ $(".cities").each(function(index){
 function btnClick(event){
   $(".green").removeClass("green");
   var cityName = $(this).html();
-  var queryURL = `http://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=03db9957cc3df2d4c78bce1e3642f5ab` + `&units=imperial`
+  var queryURL = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=03db9957cc3df2d4c78bce1e3642f5ab` + `&units=imperial`
   $.ajax({
     url: queryURL,
     method: "GET",
   }).then(function (response) {
-    var iconurl=`http://openweathermap.org/img/wn/${response.list[0].weather[0].icon}@2x.png`
-    var iconurl1=`http://openweathermap.org/img/wn/${response.list[7].weather[0].icon}@2x.png`
-    var iconurl2=`http://openweathermap.org/img/wn/${response.list[15].weather[0].icon}@2x.png`
-    var iconurl3=`http://openweathermap.org/img/wn/${response.list[23].weather[0].icon}@2x.png`
-    var iconurl4=`http://openweathermap.org/img/wn/${response.list[31].weather[0].icon}@2x.png`
-    var iconurl5=`http://openweathermap.org/img/wn/${response.list[39].weather[0].icon}@2x.png`
+    var iconurl=`https://openweathermap.org/img/wn/${response.list[0].weather[0].icon}@2x.png`
+    var iconurl1=`https://openweathermap.org/img/wn/${response.list[7].weather[0].icon}@2x.png`
+    var iconurl2=`https://openweathermap.org/img/wn/${response.list[15].weather[0].icon}@2x.png`
+    var iconurl3=`https://openweathermap.org/img/wn/${response.list[23].weather[0].icon}@2x.png`
+    var iconurl4=`https://openweathermap.org/img/wn/${response.list[31].weather[0].icon}@2x.png`
+    var iconurl5=`https://openweathermap.org/img/wn/${response.list[39].weather[0].icon}@2x.png`
     console.log(response);
     $("#cityName").text(response.city.name);
     $('#img').attr('src', iconurl);
@@ -238,7 +238,7 @@ function btnClick(event){
     var lon = response.city.coord.lon;
     console.log(lon);
     console.log(lat);
-    var query=`http://api.openweathermap.org/data/2.5/uvi?appid=03db9957cc3df2d4c78bce1e3642f5ab&lat=${lat}&lon=${lon}`
+    var query=`https://api.openweathermap.org/data/2.5/uvi?appid=03db9957cc3df2d4c78bce1e3642f5ab&lat=${lat}&lon=${lon}`
     $.ajax({
       url: query,
       method: "GET",
